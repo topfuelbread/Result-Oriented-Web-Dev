@@ -1,0 +1,17 @@
+.mt20{
+	margin-top: 20px;
+}
+
+footer{
+	height: 50px;
+	margin-top: 20px;
+}
+
+footer .container, footer .row{
+	height: 100%;
+}
+
+footer .copyright, footer .btn{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
