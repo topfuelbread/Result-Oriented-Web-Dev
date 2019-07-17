@@ -1,0 +1,101 @@
+.block{
+	width: 150px;
+	height: 150px;
+	background: linear-gradient(to top, #69f 0%, #fcf 30%, #69f 100%);
+	box-shadow: inset 2px 2px 5px 2px #fcf;
+	border-radius: 10px;
+	display: inline-block;
+	vertical-align: top;
+	color: white;
+}
+
+h3{
+	font-family: Arial;
+	font-size: 18px;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.vertical{
+	width: 75px;
+	height: 75px;
+	display: flex;
+	/*input and label are next to each other*/
+	justify-content: center;
+	align-items: center;
+	margin:0 auto;
+}
+
+.vertical input{
+	transform: rotate(90deg);
+	width: 75px;
+}
+
+.vertical label{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 75px;
+
+}
+
+.horizontal{
+	width: 100px;
+	margin:0 auto;
+}
+
+.horizontal input{
+	width: 100px;
+}
+
+.horizontal label{
+	width: 100px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.center{
+	height: 75px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+#ok-shape{
+	margin-top: 10px;
+}
+
+.hex-container{
+	width: 120px;
+	margin: 30px auto 0;
+}
+
+#hex{
+	width: 100px;
+}
+
+.rgba-container{
+	width: 120px;
+	margin: 0 auto;
+}
+
+.rgba-container input{
+	width: 100px;
+}
+
+
+.container{
+	margin-top: 20px;
+	position: relative;
+}
+
+#block{
+	width: 150px;
+	height: 150px;
+	background-color: #fcf;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
