@@ -1,0 +1,28 @@
+/*193 Form Events*/
+.formInput{
+	height: 30px;
+	width: 200px;
+}
+
+.focused{
+	background: #efefef;
+	border: 1px solid #999;
+	box-shadow: 0 0 10px #d3d3d3;
+	outline: none;
+}
+
+div{
+	padding: 10px;
+}
+
+.circle{
+	border-radius: 50%
+}
+
+.manipulate{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: blue;
+	color: white;
+}

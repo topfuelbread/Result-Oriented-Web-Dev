@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Project 8 - To-do List</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="script.js"></script>
+</head>
+<body>
+	<div id="todo">
+		<div class="header">
+			<h2>To-do List</h2>
+		</div>
+		<div class="body">
+			<div class="add">
+				<input type="text" class="addField" placeholder="Add a task you want to complete...">
+				<button class="col-3 addBtn">+</button>
+			</div>
+			<ul class="tasks" id="tasks-list">
+				<li class="task">
+					<!-- each task has checkbox, content, remove button -->
+					<div class="check col-1">
+						<input type="checkbox">
+					</div>
+					<div class="text col-2">Task 1</div>
+					<div class="remove col-3"></div>
+				</li>
+				<li class="task">
+					<div class="check col-1">
+						<input type="checkbox">
+					</div>
+					<div class="text col-2">Task 2</div>
+					<div class="remove col-3"></div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
