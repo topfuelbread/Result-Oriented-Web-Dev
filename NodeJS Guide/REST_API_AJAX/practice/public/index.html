@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shop</title>
+</head>
+<body>
+    <h1>Shop</h1>
+    <h2>Show all product</h2>
+    <button class="show">Show</button>
+    <ul class="list"></ul>
+
+    <h2>Add product</h2>
+    <form class="add">
+        <p>
+            <label for="addName">Product: </label>
+            <input type="text" id="addName">
+        </p>
+        <p>
+            <label for="addPrice">Price: </label>
+            <input type="text" id="addPrice">
+        </p>
+        <button>Add</button>
+    </form>
+
+    <h2>Update Price</h2>
+    <form class="update">
+        <p>
+            <label for="updateId">Product ID: </label>
+            <input type="number" id="updateId">
+        </p>
+        <p>
+            <label for="updatePrice">Price: </label>
+            <input type="text" id="updatePrice">
+        </p>
+        <button>Update</button>
+    </form>
+
+    <h2>Delete Product</h2>
+    <form class="delete">
+        <p>
+            <label for="deleteId">Product ID: </label>
+            <input type="number" id="deleteId">
+        </p>
+        <button>Delete</button>
+    </form>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

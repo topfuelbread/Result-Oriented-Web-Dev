@@ -1,0 +1,4 @@
+235 Asynchronous Code
+- Sync --> blocking
+- Async --> non-blocking
+- achieved by callback, promises and async/await

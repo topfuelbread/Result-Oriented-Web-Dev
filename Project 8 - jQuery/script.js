@@ -16,7 +16,7 @@ $(document).ready(function(){
 	$('.tasks').on('click', '.remove', function(){		
 		//add eventHandler to .remove whenever clicked
 		//allows newly added task to be deleted
-		$(this).parent().remove();
+		$(this).parent().fadeOut();
 	})
 
 	//checkbox
