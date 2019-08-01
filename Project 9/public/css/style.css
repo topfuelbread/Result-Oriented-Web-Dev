@@ -32,6 +32,14 @@ footer .copyright, footer .btn{
 	padding: 15px;
 }
 
+.w100{
+	width: 100%;
+}
+
+.w60{
+	width: 60%;
+}
+
 .w30{
 	width: 30%;
 }
@@ -54,6 +62,7 @@ footer .copyright, footer .btn{
 
 .article-inline{
 	padding-left: 15px;
+	flex-wrap: wrap;
 }
 
 .article-inline:nth-of-type(odd){

@@ -18,7 +18,8 @@ router.get('/:id', async (req,resp)=>{
 router.post('/', async (req,resp)=>{
     let imgPath;
     if (req.body.imageURL)  imgPath = req.body.imageURL;            //option 1: URL
-    // else imgPath = req.file.path.substring(req.file.path.indexOf(path.sep),req.file.path.length);   //option 2: file
+    else imgPath = req.file.path.substring(req.file.path.indexOf(path.sep),req.file.path.length);   //option 2: file
+    console.log(imgPath);
     let newPost = new Post({
         id: uniqid(),
         title: req.body.title,
