@@ -5,6 +5,7 @@ app.use(express.json());
 let Post = require('./models/posts').Post;
 let CallbackRequest = require('./models/callback-requests').CallbackRequest;
 
+app.set('view engine', 'ejs');      //for template 
 
 //to read binary file-- use multer
 let multer = require('multer');
@@ -25,5 +26,16 @@ let callbackRequestsRouter = require('./routes/callback-requests');
 app.use('/callback-requests', callbackRequestsRouter);
 let emailRouter = require('./routes/emails');
 app.use('/emails', emailRouter);
+
+
+app.get('/sight', async (req,resp)=>{      //for template
+    let post = await Post.findOne({title: req.query.title});
+    resp.render('sight', {          //location: views/sight.ejs
+        title: post.title,
+        imageURL: post.imageURL,
+        date: post.date,
+        text: post.text
+    })
+});
 
 app.listen(3000, ()=>console.log('Listening 3000...'));

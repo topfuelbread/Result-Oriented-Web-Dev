@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0">
+	<title>Project 9 - <%= title %></title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			  <a class="navbar-brand" href="/">Project 9</a>
+			  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+			    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			      <li class="nav-item active">
+			        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="#">About Us</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="#">Contact Us</a>
+				  </li>
+				  <li class="nav-item">
+			        <a class="nav-link" href="/admin">Admin Page</a>
+			      </li>
+			    </ul>
+			    <form class="form-inline my-2 my-lg-0 call-me-form">
+			      <input class="form-control mr-sm-2" type="search" placeholder="Phone Number" aria-label="Search">
+			      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Call Me</button>
+			    </form>
+			  </div>
+			</div>
+		</nav>
+	</header>
+	<!-- MAIN -->
+    <main>
+		<div class="container sight-container">
+            <h1><%= title %></h1>
+            <hr>
+            <img src="<%= imageURL %>" alt="<%= title %>">
+            <hr>
+            <p class="date"><%= date %></p>
+            <hr>
+            <p class="text"><%= text %></p>
+			<div id="map"></div>
+        </div>
+	</main>
+	<!-- MAIN -->
+	<div class="modal" tabindex="-1" role="dialog" id="contactModal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Contact Us</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form class="email-request-form">
+						<div class="form-group">
+						<label for="name">Your Name</label>
+						<input type="text" class="form-control" id="name" placeholder="Name">
+						</div>
+						<div class="form-group">
+						<label for="email">Email Address</label>
+						<input type="text" class="form-control" id="email" placeholder="email@email.com">
+						</div>
+						<div class="form-group">
+						<label for="message">Message</label>
+						<textarea class="form-control" id="message" rows="3"></textarea>
+						</div>
+						<input type="submit" class="btn btn-primary" data-toggle="modal" data-target="#contactModal">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+    <footer class="bg-light">
+		<div class="container">
+			<div class="row">
+				<div class="col-6 d-flex align-item-center">
+					<p class="copyright">©2019. All Rights Reserved.</p>
+				</div>
+				<div class="col-6 d-flex justify-content-end align-item-center">
+					<button class="btn btn-primary"  data-toggle="modal" data-target="#contactModal">Contact Us</button>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASIa0lq08jHL5F1p9RZ2JLUCnSEiMvFWQ&callback=initMap"
+    async defer></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/emails.js"></script>
+	<script src="js/call-me.js"></script>
+	<script src="js/maps.js"></script>
+
+	<script>
+		function initMap() {
+			let geo = new google.maps.Geocoder();
+			let map = new google.maps.Map(document.getElementById('map'), {
+				center: {lat: -34.397, lng: 150.644},
+				zoom: 15
+			});
+			geo.geocode({
+				'address':"<%=title%>"
+			}, (results,status)=>{
+				if (status == 'OK') {
+					map.setCenter(results[0].geometry.location);
+					var marker = new google.maps.Marker({
+						map: map,
+						position: results[0].geometry.location
+				});
+				} 
+				else {alert('Geocode was not successful for the following reason: ' + status);}
+			});
+		}
+		</script>
+</body>
+</html>
